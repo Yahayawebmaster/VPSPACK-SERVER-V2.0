@@ -425,7 +425,10 @@ bash /etc/usuariosteste/$nome.sh &
 exit
 }
 function badvpn_install(){
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/master/Install/badudpj&& bash badudp
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/master/Install/badudp && bash badudp
+}
+function tcptweaker_install(){
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/master/Install/tcptweaker && bash badudp
 }
 function removerlimite(){
 echo -ne "\033[1;32mCual usuario desear retirar el Limite de Conexion: \033[0m"
