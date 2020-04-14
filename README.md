@@ -1,6 +1,6 @@
 ﻿# VPSPACK-SERVER-V2.0
 
-![logo](https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/master/Imagenes/VPSPACK_SERVER.png)
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/blob/master/Imagenes/VPSPACK_SERVER.png)
 
 **Manager Script**
 
