@@ -726,13 +726,21 @@ ram1=$(free -h | grep -i mem | awk {'print $2'})
 ram2=$(free -h | grep -i mem | awk {'print $4'})
 ram3=$(free -h | grep -i mem | awk {'print $3'})
 uso=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
+
 system=$(cat /etc/issue.net)
+
+_hora=$(printf '%(%H:%M:%S)T')
+
+_core=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
 
 uso=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
 system=$(cat /etc/issue.net)
 if [ "$system" ]
 then
-echo -e "\033[1;31mSISTEMA\033[1;37m: \033[1;32m$system     \033[1;31mUSO DA CPU \033[1;37m[\033[1;32m$uso\033[1;37m]"
+echo -e "\033[1;31mSISTEMA\033[1;37m: \033[1;32m$system     \033[1;31mHORA \033[1;37m[\033[1;32m$_hora\033[1;37m]"
+echo -e "\033[0;34m=========================================================\033[0m"
+echo -e "\033[1;31mPROCESSADOR \033[1;37mNUCLEOS: \033[1;32m$_core     \033[1;31mUSO DA CPU \033[1;37m[\033[1;32m$uso\033[1;37m]"
+
 else
 echo -e "\033[1;32mSISTEMA: \033[1;33m[ \033[1;31mNao disponivel \033[1;33m]"
 fi
@@ -741,19 +749,19 @@ echo -e "\033[1;31mMEMORIA RAM\033[1;37m TOTAL: \033[1;32m$ram1  \033[1;37mUSADO
 echo -e "\033[0;34m=========================================================\033[0m"
 echo -e "\033[1;31m ∆ \033[1;33m¡BIENVENIDO AL MENÚ VPSPACK-SERVER V2.0!\033[0m"
 echo -e "\033[0;34m=========================================================\033[0m"
-echo -e "\033[1;31m|1|• \033[1;36mConfigurar_Squid_SSH\033[01;37m            \033[1;31m |14|• \033[1;37mBackup-Users\033[01;37m"
-echo -e "\033[1;31m|2|• \033[1;37mCriar_Usuario\033[01;37m                   \033[1;31m |15|• \033[1;37mRest-Users\033[01;37m"
-echo -e "\033[1;31m|3|• \033[1;37mCriar_Teste\033[01;37m                     \033[1;31m |16|• \033[1;37mBadVpn\033[01;37m"
-echo -e "\033[1;31m|4|• \033[1;37mDeletar_Usuario\033[01;37m                 \033[1;31m |17|• \033[1;37mBadVpn_Start\033[01;37m"
-echo -e "\033[1;31m|5|• \033[1;37mDeletar_Todos\033[01;37m                   \033[1;31m |18|• \033[1;37mBadVpn_Stop\033[01;37m"
-echo -e "\033[1;31m|6|• \033[1;37mRedefinir_Usuario\033[01;37m               \033[1;31m |19|• \033[1;37mSpeedtest\033[01;37m"
-echo -e "\033[1;31m|7|• \033[1;37mMudar_Nome\033[01;37m                      \033[1;31m |20|• \033[1;37mSistema_Detalhes\033[01;37m"
-echo -e "\033[1;31m|8|• \033[1;37mLimite\033[01;37m                          \033[1;31m |21|• \033[1;37mAddhost\033[01;37m"
-echo -e "\033[1;31m|9|• \033[1;37mRemover_Limite\033[01;37m                  \033[1;31m |22|• \033[1;37mRemover_Host\033[01;37m"
-echo -e "\033[1;31m|10|• \033[1;37mUsuarios_Detalhes\033[01;37m              \033[1;31m |23|• \033[1;37mFirewall-block\033[01;37m"
-echo -e "\033[1;31m|11|• \033[1;37mMonitorar\033[01;37m                      \033[1;31m |24|• \033[1;37mReset_Firewall\033[01;37m"
-echo -e "\033[1;31m|12|• \033[1;37mRemover_expirados\033[01;37m              \033[1;31m |25|• \033[1;36mDesinstalar\033[0m"
-echo -e "\033[1;31m|13|• \033[1;37mBanner\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m1|\033[1;31m• \033[1;36mConfigurar_Squid_SSH\033[01;37m            \033[1;31m |\033[1;36m14|\033[1;31m• \033[1;37mBackup-Users\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m2|\033[1;31m• \033[1;37mCriar_Usuario\033[01;37m                   \033[1;31m |\033[1;36m15|\033[1;31m• \033[1;37mRest-Users\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m3|\033[1;31m• \033[1;37mCriar_Teste\033[01;37m                     \033[1;31m |\033[1;36m16|\033[1;31m• \033[1;37mBadVpn\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m4|\033[1;31m• \033[1;37mDeletar_Usuario\033[01;37m                 \033[1;31m |\033[1;36m17|\033[1;31m• \033[1;37mBadVpn_Start\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m5|\033[1;31m• \033[1;37mDeletar_Todos\033[01;37m                   \033[1;31m |\033[1;36m18|\033[1;31m• \033[1;37mBadVpn_Stop\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m6|\033[1;31m• \033[1;37mRedefinir_Usuario\033[01;37m               \033[1;31m |\033[1;36m19|\033[1;31m• \033[1;37mSpeedtest\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m7|\033[1;31m• \033[1;37mMudar_Nome\033[01;37m                      \033[1;31m |\033[1;36m20|\033[1;31m• \033[1;37mSistema_Detalhes\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m8|\033[1;31m• \033[1;37mLimite\033[01;37m                          \033[1;31m |\033[1;36m21|\033[1;31m• \033[1;37mAddhost\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m9|\033[1;31m• \033[1;37mRemover_Limite\033[01;37m                  \033[1;31m |\033[1;36m22|\033[1;31m• \033[1;37mRemover_Host\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m10|\033[1;31m• \033[1;37mUsuarios_Detalhes\033[01;37m              \033[1;31m |\033[1;36m23|\033[1;31m• \033[1;37mFirewall-block\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m11|\033[1;31m• \033[1;37mMonitorar\033[01;37m                      \033[1;31m |\033[1;36m24|\033[1;31m• \033[1;37mReset_Firewall\033[01;37m"
+echo -e "\033[1;31m|\033[1;36m12|\033[1;31m• \033[1;37mRemover_expirados\033[01;37m              \033[1;31m |\033[1;36m25|\033[1;31m• \033[1;36mDesinstalar\033[0m"
+echo -e "\033[1;31m|\033[1;36m13|\033[1;31m• \033[1;37mBanner\033[01;37m"
 echo -e "\033[0;34m=========================================================\033[0m"
 echo -e "\033[1;35m Opción\033[0m"
 read -p " : " opcao
