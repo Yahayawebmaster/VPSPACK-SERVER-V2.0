@@ -4,11 +4,13 @@
 
 **Manager Script**
 
-1 • RECOMENDADO DEBIAN Y UBUNTU. ALGUNOS DE ELLOS TAMBIÉN PUEDEN FUNCIONAR CON CENTOS.
-
-2 • USAR DISTRIBUCION NUEVA O FORMATIADA
+* Un sistema operativo basado en Linux (Ubuntu o Debian)
+* Recomendamos Ubuntu 14.04
+* Se recomienda usar una distro nueva o formatiada
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/master/instalarold && bash instalarold
+
+-------------------------------------------------------------------------------
 
 ```
 * SIN MINERIA! 
