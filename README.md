@@ -4,6 +4,8 @@
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/blob/master/Imagenes/VPSPACK_SERVER.png)
 
+-------------------------------------------------------------------------------
+
 **Manager Script**
 
 * Un sistema operativo basado en Linux (Ubuntu o Debian)
