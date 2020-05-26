@@ -1,5 +1,7 @@
 ﻿# VPSPACK-SERVER-V2.0
 
+# ESTE PROYECTO A SIDO DESCONTINUADO.--
+
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPSPACK-SERVER-V2.0/blob/master/Imagenes/VPSPACK_SERVER.png)
 
 **Manager Script**
